@@ -1,0 +1,149 @@
+/* animations.css */
+/* 基础显示设置 - 确保元素默认可见 */
+.products {
+    opacity: 1 !important; /* 覆盖任何可能隐藏的样式 */
+    visibility: visible !important;
+}
+
+.product-card {
+    opacity: 1; /* 默认设为可见 */
+    visibility: visible;
+    transform: translateY(0);
+    transition: all 0.5s ease;
+}
+
+/* 只在启用动画时隐藏 */
+body.animations-enabled .product-card {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+}
+
+/* 动画关键帧 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 其他原有动画样式保持不变... */
+/* animations.css */
+/* 添加动画样式 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* 增加起始移动距离 */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.hero-content {
+    animation: fadeInUp 1.2s ease-out; /* 减慢动画速度 */
+}
+
+.feature {
+    transition: all 0.4s ease; /* 减慢过渡速度 */
+    animation: fadeInUp 1s ease-out; /* 减慢动画速度 */
+    animation-fill-mode: both;
+}
+
+.feature:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+/* 增加延迟 */
+.feature:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.feature:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+}
+
+.feature .icon {
+    font-size: 2.5rem;
+    animation: float 4s ease-in-out infinite; /* 减慢浮动速度 */
+}
+
+.product-card {
+    transition: all 0.5s ease; /* 减慢过渡速度 */
+    opacity: 0;
+    transform: translateY(30px);
+    visibility: hidden; /* 确保完全隐藏 */
+}
+
+.product-card.animated {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible; /* 确保显示 */
+    animation: fadeInUp 1s ease-out; /* 减慢动画速度 */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* 增强悬停效果 */
+}
+
+.btn {
+    transition: all 0.4s ease; /* 减慢过渡速度 */
+    animation: pulse 3s infinite; /* 减慢脉冲速度 */
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(0, 123, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+    }
+}
+
+/* 页面加载动画 */
+body {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in forwards; /* 减慢淡入速度 */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* 调整原有内容位置，为固定导航栏留出空间 */
+body {
+    padding-top: 70px; /* 与导航栏高度匹配 */
+}
+
+/* 确保hero部分不会被导航栏遮挡 */
+.hero {
+    margin-top: -70px;
+    padding-top: 70px;
+}

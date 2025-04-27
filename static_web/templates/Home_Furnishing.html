@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 科技商城</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+</head>
+<body>
+<!-- 新增导航栏 -->
+<nav class="navbar">
+    <div class="container">
+        <a href="#" class="logo">ShopEase</a>
+        <div class="nav-links">
+            <div class="dropdown">
+                <button class="dropbtn">商店
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('products') }}">选购新品</a>
+                    <a href="#laptops">Mac</a>
+                    <a href="#watches">Apple Watch</a>
+                    <a href="#iphone">Iphone</a>
+                    <a href="#Ipad">Ipad</a>
+                    <a href="#vision">Apple Vision Pro</a>
+                    <a href="#accessories">配件</a>
+                    <a href="{{ url_for('index') }}">首页></a>
+                </div>
+            </div>
+            <!-- 添加下拉菜单项 -->
+            <div class="dropdown">
+                <button class="dropbtn">产品
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('products') }}">智能手机</a>
+                    <a href="#laptops">笔记本电脑</a>
+                    <a href="#watches">智能手表</a>
+                    <a href="#accessories">配件</a>
+                    <a href="{{ url_for('index') }}">首页></a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">家居
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('Home') }}">探索家具项目</a>
+                    <a href="#laptops">Home Pod</a>
+                    <a href="#watches">Home Pod mini</a>
+                    <a href="{{ url_for('index') }}">首页></a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">配件
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('cart') }}">选购所有配件</a>
+                    <a href="#laptops">Mac</a>
+                    <a href="#watches">Iphone</a>
+                    <a href="#watches">Ipad</a>
+                    <a href="#watches">Airpods</a>
+                    <a href="#watches">Apple Watch</a>
+                    <a href="#watches">Apple Vision Pro</a>
+                    <a href="#watches">家居</a>
+                    <a href="{{ url_for('index') }}">首页></a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">技术支持
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('support') }}">探索技术支持</a>
+                    <a href="#laptops">Mac</a>
+                    <a href="#watches">Iphone</a>
+                    <a href="#watches">Ipad</a>
+                    <a href="#watches">Airpods</a>
+                    <a href="#watches">Apple Watch</a>
+                    <a href="#watches">Apple Vision Pro</a>
+                    <a href="#watches">Music</a>
+                    <a href="{{ url_for('index') }}">首页></a>
+                </div>
+            </div>
+        </div>
+        <!-- 新增右侧图标区 -->
+        <div class="nav-icons">
+            <!-- 搜索图标 -->
+            <button class="nav-icon search-icon" aria-label="搜索">
+                <i class="fas fa-search"></i>
+            </button>
+
+            <!-- 购物袋图标 -->
+            <a href="#cart" class="nav-icon cart-icon" aria-label="购物车">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span> <!-- 购物车商品数量 -->
+            </a>
+        </div>
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</nav>
+<section id="products1" class="products">
+    <h2>未来到家</h2>
+    <h5>只要连上你常用的设备，就能把家变成智能、便捷，又充满乐趣的安乐窝。<br>无论你人在哪里，都能在各个房间播放想听的歌；只要召唤
+        AI，就能操控灯光、门锁和恒温器；而且这一切，都在 产品周到的安全和隐私保护下进行。</h5>
+    <div class="product-grid">
+        <div class="product-card">
+            <h3>旗舰Home Pod</h3>
+            <h4>声声有天地</h4>
+            <p>用手中常用的设备，随时随地掌控你的家。</p>
+            <a href="#products" class="btn">购买</a>
+            <span class="price">进一步了解></span>
+            <img src="{{ url_for('static', filename='images/homePod.jpg') }}" alt="智能手机">
+        </div>
+        <div class="product-card">
+            <h3>旗舰Home Pod mini</h3>
+            <h4>身材小巧，声音超震撼。</h4>
+            <p>说一声，让一切自动发生。</p>
+            <a href="#products" class="btn">购买</a>
+            <span class="price">进一步了解></span>
+            <img src="{{ url_for('static', filename='images/homepodmini.jpg') }}" alt="笔记本电脑" width="380px" height="290px">
+        </div>
+    </div>
+</section>
+<section id="products" class="products">
+    <h1>把家变智能，家家都有好理由。</h1>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='images/mini.jpg') }}" alt="智能手机">
+            <h3>旗舰Mac mini</h3>
+            <h4>新一代 M4 或 M4 Pro 芯片</h4>
+            <p>让你做得更多，做得更快</p>
+            <span class="price">RMB 187/月 (0% 费率 24 个月分期) 起或RMB 4499 起</span>
+        </div>
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='images/studio.jpg') }}" alt="笔记本电脑">
+            <h3>旗舰Mac Studio</h3>
+            <h4>强势动力来自 M4 Max or M3 Utrl</h4>
+            <p>拥有最高达 16 核中央处理器、最高达 40 核图形处理器和 16 核神经网络引擎</p>
+            <span class="price">RMB 687/月 (0% 费率 24 个月分期) 起或RMB 16,499 起</span>
+        </div>
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='images/display.jpg') }}" alt="智能手表">
+            <h3>智能Studio Display</h3>
+            <h4>27 英寸 5K 视网膜显示屏</h4>
+            <p>带来 1470 万像素和十亿色彩，让你一见倾心</p>
+            <span class="price">RMB 479/月 (0% 费率 24 个月分期) 起或RMB 11,499 起</span>
+        </div>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2025 科技产品展示. 保留所有权利.</p>
+</footer>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+<script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>循环结构示例</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>学生成绩表</h1>
+
+<!-- 1. 遍历列表字典 -->
+<table>
+    <tr>
+        <th>姓名</th>
+        <th>分数</th>
+        <th>状态</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+        <td>{{ student.name }}</td>
+        <td>{{ student.score }}</td>
+        <td>
+            {% if student.score >= 90 %}
+            👍 优秀
+            {% elif student.score >= 60 %}
+            ✔️ 及格
+            {% else %}
+            ❌ 不及格
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!-- 2. 遍历简单列表 -->
+<h2>课程列表</h2>
+<ul>
+    {% for course in courses %}
+    <li>{{ loop.index }}. {{ course }}</li>
+    {% endfor %}
+</ul>
+
+<!-- 3. 处理空列表 -->
+<h2>待办任务</h2>
+{% if empty_list %}
+<ul>
+    {% for task in empty_list %}
+    <li>{{ task }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>暂无任务</p>
+{% endif %}
+<!-- 4. 使用loop变量 -->
+<p>循环控制变量示例：</p>
+<ul>
+    {% for item in courses %}
+    <li>
+        当前迭代: {{ loop.index }} / {{ loop.length }}<br>
+        是否是第一次循环: {{ loop.first }}<br>
+        是否是最后一次循环: {{ loop.last }}
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

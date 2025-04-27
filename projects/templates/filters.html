@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>过滤器示例</title>
+</head>
+<body>
+<h1>内置过滤器</h1>
+
+<!-- 1. 字符串处理 -->
+<p>原始文本: {{ text }}</p>
+<p>大写: {{ text|upper }}</p>
+<p>首字母大写: {{ text|capitalize }}</p>
+<p>反转: {{ text|reverse }}</p>
+
+<!-- 2. 数字处理 -->
+<p>数字: {{ number }}</p>
+<p>绝对值: {{ -5|abs }}</p>
+
+<!-- 3. HTML转义与安全渲染 -->
+<p>默认转义: {{ html_content }}</p>
+<p>安全渲染: {{ html_content|safe }}</p>
+
+<!-- 4. 列表处理 -->
+<p>学生列表: {{ students|join(', ') }}</p>
+<p>列表长度: {{ students|length }}</p>
+</body>
+</html>

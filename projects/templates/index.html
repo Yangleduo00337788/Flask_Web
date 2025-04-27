@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>模板变量示例</title>
+</head>
+<body>
+<h1>用户信息</h1>
+<!-- 1. 渲染字符串 -->
+<p>姓名：{{ user.name }}</p>
+<p>学号：{{ user.student_id }}</p>
+
+<!-- 2. 渲染列表 -->
+<p>选修课程：</p>
+<ul>
+    {% for course in user.courses %}
+    <li>{{ course }}</li>
+    {% endfor %}
+</ul>
+
+<!-- 3. 渲染条件判断 -->
+{% if user.name == '张望鹏' %}
+<p>当前用户：{{ user.name }}（组长）</p>
+{% endif %}
+</body>
+</html>

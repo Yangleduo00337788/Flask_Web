@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>宏的示例</title>
+    <style>
+        .student-card {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .active { background-color: #e8f5e9; }
+        .inactive { background-color: #ffebee; }
+        .alert {
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid;
+        }
+        .alert-info { border-color: #2196F3; background: #e7f3fe; }
+        .alert-success { border-color: #4CAF50; background: #e8f5e9; }
+    </style>
+</head>
+<body>
+    <h1>学生信息管理系统</h1>
+
+    <!-- 导入宏 -->
+    {% import "macros.html" as macros %}
+
+    <!-- 调用警报宏 -->
+    {{ macros.alert("数据加载成功！", "success") }}
+
+    <!-- 循环调用学生卡片宏 -->
+    <div class="student-list">
+        {% for student in students %}
+            {{ macros.student_card(student) }}
+        {% endfor %}
+    </div>
+
+    <!-- 直接调用带默认参数的警报宏 -->
+    {{ macros.alert("这是默认信息提示") }}
+</body>
+</html>

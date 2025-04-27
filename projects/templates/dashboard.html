@@ -1,0 +1,27 @@
+{% extends "message_index.html" %}
+
+{% block title %}控制面板{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h5>用户仪表盘</h5>
+    </div>
+    <div class="card-body">
+        <p>欢迎访问系统仪表盘！</p>
+        <button class="btn btn-success" onclick="flashTest()">测试成功消息</button>
+        <button class="btn btn-warning ms-2" onclick="flashWarning()">测试警告消息</button>
+    </div>
+</div>
+
+<script>
+    function flashTest() {
+        fetch("/test-flash?type=success")
+            .then(() => window.location.reload());
+    }
+    function flashWarning() {
+        fetch("/test-flash?type=warning")
+            .then(() => window.location.reload());
+    }
+</script>
+{% endblock %}

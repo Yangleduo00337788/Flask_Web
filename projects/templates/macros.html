@@ -1,0 +1,15 @@
+<!-- 定义可复用的学生卡片宏 -->
+{% macro student_card(student) %}
+<div class="student-card {{ 'active' if student.active else 'inactive' }}">
+    <h3>{{ student.name }}</h3>
+    <p>分数: {{ student.score }}</p>
+    <p>状态: {{ '活跃' if student.active else '未激活' }}</p>
+</div>
+{% endmacro %}
+
+<!-- 定义警报消息宏 -->
+{% macro alert(message, type='info') %}
+<div class="alert alert-{{ type }}">
+    {{ message }}
+</div>
+{% endmacro %}

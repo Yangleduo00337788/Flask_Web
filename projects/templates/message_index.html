@@ -1,0 +1,10 @@
+{% extends "message_flashing.html" %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">欢迎使用消息闪现系统</h1>
+    <p class="lead">本示例演示Flask的消息闪现功能</p>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}" role="button">开始体验</a>
+</div>
+{% endblock %}

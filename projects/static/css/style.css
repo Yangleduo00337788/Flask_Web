@@ -1,0 +1,42 @@
+/* 全局样式 */
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* 导航栏样式 */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+/* 横幅样式 */
+.banner {
+    overflow: hidden;
+    max-height: 400px;
+}
+.banner img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* 产品卡片样式 */
+.product-card {
+    transition: transform 0.3s;
+    border: none;
+    box-shadow: 0 0 15px rgba(0,0,0,.1);
+}
+.product-card:hover {
+    transform: translateY(-5px);
+}
+.product-card img {
+    height: 200px;
+    object-fit: contain;
+    padding: 20px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .product-card {
+        margin-bottom: 20px;
+    }
+}

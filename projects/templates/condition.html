@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>选择结构示例</title>
+</head>
+<body>
+<h1>用户状态检查</h1>
+
+<!-- 1. 基础if判断 -->
+<p>
+    {% if user.is_active %}
+    ✅ 用户 {{ user.name }} 已激活
+    {% else %}
+    ❌ 用户未激活
+    {% endif %}
+</p>
+
+<!-- 2. 多条件判断 -->
+<p>
+    {% if user.score >= 90 %}
+    成绩优秀（A）
+    {% elif user.score >= 60 %}
+    成绩合格（B）
+    {% else %}
+    成绩不合格（C）
+    {% endif %}
+</p>
+
+<!-- 3. 逻辑运算符 -->
+<p>
+    {% if user.role == 'admin' and user.is_active %}
+    ⚡ 管理员权限已开通
+    {% endif %}
+</p>
+<!-- 4. 检查变量是否存在 -->
+<p>
+    {% if user.email is defined %}
+    邮箱：{{ user.email }}
+    {% else %}
+    未绑定邮箱
+    {% endif %}
+</p>
+
+<!-- 5. 列表内容检查 -->
+{% set tasks = ['提交作业', '复习Flask', '预习Django'] %}
+<p>
+    待办任务：
+    {% if tasks %}
+<ul>
+    {% for task in tasks %}
+    <li>{{ task }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+暂无任务
+{% endif %}
+</p>
+<!-- 6. 条件与过滤器组合 -->
+<p>
+    {% if user.name|length > 2 %}
+    用户名较长（{{ user.name|upper }}）
+    {% else %}
+    用户名较短
+    {% endif %}
+</p>
+</body>
+</html>
